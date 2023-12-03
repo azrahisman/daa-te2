@@ -1,4 +1,4 @@
-# ===== CODE FOR GENERATING BINARY TREE =====
+# ===== CODE FOR GENERATING TREE =====
 
 import random
 
