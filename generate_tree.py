@@ -11,12 +11,13 @@ class Node:
 
 # function to generate binary tree (general idea from Abdul Bari on Udemy)
 def generate_tree(num_of_vertices):
+    vertices_generated = 0
     if num_of_vertices <= 0:
         return None
 
     # create the root node
     root = Node(random.randint(1, 1000000))
-    vertices_generated = 1
+    vertices_generated += 1
 
     # implement queue for the iterating process
     q = []
