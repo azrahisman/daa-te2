@@ -1,6 +1,8 @@
 import random
 import time
 
+# Code dari URL yang dibagikan pada soal, ditambahkan code untuk generate random tree
+
 # A naive recursive Python3 implementation 
 # for vertex cover problem for a tree
 
@@ -46,13 +48,14 @@ def vCover(root):
 	return min(size_incl, size_excl)
 
 # function to generate binary tree (general idea from Abdul Bari on Udemy)
-def generate_tree(num_of_vertices):
+def generate_random_tree(num_of_vertices):
+    vertices_generated = 0
     if num_of_vertices <= 0:
         return None
 
     # create the root node
     root = Node(random.randint(1, 1000000))
-    vertices_generated = 1
+    vertices_generated += 1
 
     # implement queue for the iterating process
     q = []
@@ -90,16 +93,16 @@ if __name__ == '__main__':
 	# root.right = Node(22)
 	# root.right.right = Node(25)
 
-	#RECORD START TIME
+	# record start time
 	start_time=time.time()
 
 	# implementation of the generating tree
 	num_vertices = int(input("Enter the number of vertices: "))
-	root = generate_tree(num_vertices)
+	root = generate_random_tree(num_vertices)
 
 	print("Size of the smallest vertex cover is", vCover(root))
 
-	# record time
+	# record end and delta time
 	end_time=time.time()
 	delta_time=end_time-start_time
 	print("time needed:", delta_time)
